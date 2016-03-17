@@ -1,0 +1,38 @@
+Callsign
+Frequency
+Service
+Channel
+Directional Antenna (DA) or NonDirectional (ND)
+(Not Used for FM)
+FM Station Class
+(Not Used for FM)
+FM Status
+City
+State
+Country
+File Number (Application, Construction Permit or License) or Docket Number (Rulemaking)
+Effective Radiated Power -- horizontally polarized  (maximum)
+Effective Radiated Power -- vertically polarized  (maximum)
+Antenna Height Above Average Terrain (HAAT) -- horizontal polarization
+Antenna Height Above Average Terrain (HAAT) -- vertical polarization
+Facility ID Number (unique to each station)
+N (North) or S (South) Latitude
+Degrees Latitude
+Minutes Latitude
+Seconds Latitude
+W (West) or (E) East Longitude
+Degrees Longitude
+Minutes Longitude
+Seconds Longitude
+Licensee or Permittee
+Kilometers distant (radius) from entered latitude, longitude
+Miles distant (radius) from entered latitude, longitude
+Azimuth, looking from center Lat, Lon to this record's Lat, Lon
+Antenna Radiation Center Above Mean Sea Level (RCAMSL) - Horizontally Polarized - meters  *
+Antenna Radiation Center Above Mean Sea Level (RCAMSL) - Vertically Polarized - meters    *
+Directional Antenna ID Number                                                             * **
+Directional Antenna Pattern Rotation (degrees)                                            *
+Antenna Structure Registration Number
+Height of antenna radiation center above ground level (maximum) (physical center of the antenna)
+Application ID number (from CDBS database)***                                                      *
+
