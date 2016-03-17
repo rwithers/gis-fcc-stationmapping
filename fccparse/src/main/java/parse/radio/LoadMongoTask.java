@@ -24,7 +24,6 @@ public class LoadMongoTask {
 		
 		mongoLoader.drop("fm");
 		mongoLoader.load("fm", jsonFMStations);
-
 		
 		//AM
 		List<Station> amStations = radioFileParser.parse("files/amshort.txt");
