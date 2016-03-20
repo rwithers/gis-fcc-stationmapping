@@ -42,6 +42,41 @@ app.get('/am', function(req, res){
 	})
 });
 
+app.get('/points', function(req, res) {
+        var poly = JSON.parse(req.query.poly);
+
+        var coordinates = [];
+
+        for (var i = 0; i < poly.length; i++) {
+          coordinates.push([poly[i].lng, poly[i].lat]);
+        }
+
+        coordinates.push([poly[0].lng, poly[0].lat]);
+
+        var searchGeometry = { 
+                                   location: { 
+                                     $geoWithin : { 
+                                     $geometry : {
+                                         "type" : "Polygon",
+                                         "coordinates" : [coordinates] 
+                                     } 
+                              }}}
+
+        console.log(JSON.stringify(searchGeometry)); 
+
+        db.collection('fm').find(searchGeometry).toArray(function(err, items) {
+               console.log(items);
+	       res.writeHead(200, {'Content-Type': 'text/plain'});
+	       res.end(JSON.stringify(items));
+        })
+});
+
+app.use(express.static('html'));
+
+app.get('/rfplot', function(req, res) {
+        res.sendFile(path.join(__dirname + '/html/rfplot/index.html'))
+});
+
 app.get('/map', function(req, res){
 	res.sendFile(path.join(__dirname + '/html/map.html'))
 });

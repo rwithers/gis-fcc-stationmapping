@@ -4,6 +4,22 @@ import java.math.BigDecimal;
 
 public class Station {
 	
+	private class Location {
+		public Location(String type, BigDecimal lon, BigDecimal lat) {
+			this.type = type;
+			this.coordinates[0] = lon;
+			this.coordinates[1] = lat;
+		}
+		
+		@Override
+		public String toString() {
+			return "Location[type="+type+", Coordinates["+ coordinates[0] + ", "+ coordinates[1] +"]]";
+		}
+		
+		private String type="";
+		final private BigDecimal[] coordinates = new BigDecimal[2]; 
+	}
+	
 	final private String callsign;
 	final private String frequency;
 	final private String service;
@@ -19,6 +35,8 @@ public class Station {
 	
 	final private BigDecimal latitude;
 	final private BigDecimal longitude;
+	
+	final private Location location;
 	
 	final private String company;
 
@@ -41,6 +59,7 @@ public class Station {
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.company = company;
+		this.location = new Location("Point", longitude, latitude);
 	}
 	
 	@Override
@@ -49,8 +68,6 @@ public class Station {
 				+ channel + ", antennaType=" + antennaType + ", hoursOfOperation=" + hoursOfOperation
 				+ ", stationClass=" + stationClass + ", internationalStationClass=" + internationalStationClass
 				+ ", fmStatus=" + fmStatus + ", city=" + city + ", state=" + state + ", country=" + country
-				+ ", latitude=" + latitude + ", longitude=" + longitude + ", company=" + company + "]";
-	}
-	
-	
+				+ ", latitude=" + latitude + ", longitude=" + longitude + ", location=" + location + ", company=" + company + "]";
+	}	
 }
